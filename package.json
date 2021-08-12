@@ -1,0 +1,28 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "homework",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChumakovaAnna/AHJ7.1.git"
+  },
+  "author": "Chumakova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChumakovaAnna/AHJ7.1/issues"
+  },
+  "homepage": "https://github.com/ChumakovaAnna/AHJ7.1#readme",
+  "dependencies": {
+    "forever": "^4.0.1",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-static": "^5.0.0",
+    "uuid": "^8.3.2"
+  }
+}
