@@ -12,7 +12,7 @@ app.use(koaBody({
   urlencoded: true,
   multipart: true,
   json: true,
-  // text: true,
+  text: true,
 }));
 
 app.use(async (ctx, next) => {
