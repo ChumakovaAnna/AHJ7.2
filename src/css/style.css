@@ -1,0 +1,159 @@
+body {
+  /* box-sizing: border-box; */
+  padding: 1em;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3, h4 {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+
+  border: none;
+  background-color: #fff;
+}
+
+.add {
+  display: block;
+  margin-left: auto;
+
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.tickets-list {
+  margin-top: 1em;
+  min-width: 650px;
+}
+
+.ticket {
+  padding: 10px;
+  margin-bottom: 5px;
+
+  border: 1px solid #838383;
+  border-radius: 10px;
+}
+
+
+
+.description {
+  width: 100%;
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+.name {
+  width: 60%;
+  cursor: pointer;
+}
+
+.change-del {
+  margin-left: auto;
+}
+
+.status {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+  border: 1px solid #838383;
+  border-radius: 50%;
+}
+
+[data-status=false] {
+  background-color: #ffffff;
+}
+
+[data-status=true] {
+  background-color: #7ec2a8;
+} 
+
+.popup {
+  position: fixed;
+  box-sizing: border-box;
+  width: 300px;
+  left: calc( 50% - 150px);
+  padding: 10px 20px;
+
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input {
+  /* box-sizing: content-box; */
+  height: 25px;
+  width: 252px;
+  /* padding-left: 10px; */
+
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.textarea {
+  height: 50px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  
+  padding: 10px 0;
+}
+
+.button {
+  width: 110px;
+  height: 25px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button:first-child {
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-error {
+  position: absolute;
+  border: 1px solid #000000;
+  margin-top: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.form-error::before, .form-error::after {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+  border-bottom: 10px solid black;
+  top: -20px;
+  left: calc(50% - 10px);
+}
+
+.form-error::after {
+  content: '';
+  border-bottom: 10px solid #ffffff;
+  top: -19px;
+}
+
+/* #confirm-del {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  padding: 10px;
+} */
