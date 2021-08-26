@@ -1,4 +1,4 @@
-import WidgetRenderer from "./WidgetRenderer";
+import WidgetRenderer from './WidgetRenderer';
 
 const widget = new WidgetRenderer();
 widget.init();

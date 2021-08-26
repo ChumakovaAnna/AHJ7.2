@@ -2,8 +2,8 @@
 export default class Popover {
   constructor(parentEl) {
     this.parentEl = parentEl;
-    this.elPopup = document.createElement("div");
-    this.sProduct = "";
+    this.elPopup = document.createElement('div');
+    this.sProduct = '';
   }
 
   get htmlElement() {
@@ -21,10 +21,10 @@ export default class Popover {
   }
 
   addErrorElement(parentElement) {
-    const error = document.createElement("div");
-    error.id = "form-error";
-    error.className = "form-error hidden";
-    error.textContent = "Error";
+    const error = document.createElement('div');
+    error.id = 'form-error';
+    error.className = 'form-error hidden';
+    error.textContent = 'Error';
     parentElement.appendChild(error);
   }
 
@@ -33,8 +33,8 @@ export default class Popover {
   }
 
   bindToDOM() {
-    this.elPopup.id = "popup";
-    this.elPopup.className = "popup hidden";
+    this.elPopup.id = 'popup';
+    this.elPopup.className = 'popup hidden';
     this.elPopup.innerHTML = this.htmlElement;
     this.addErrorElement(this.elPopup);
     this.parentEl.appendChild(this.elPopup);
@@ -43,7 +43,7 @@ export default class Popover {
   }
 
   showPopup() {
-    this.selectPopup.classList.remove("hidden");
+    this.selectPopup.classList.remove('hidden');
     this.selectPopup.style.top = `${(window.innerHeight
       - this.selectPopup.offsetHeight) / 2}px`;
     this.selectPopup.style.left = `${(window.innerWidth
@@ -51,56 +51,56 @@ export default class Popover {
   }
 
   constants() {
-    this.selectPopup = document.querySelector("#popup");
-    this.inputName = document.querySelector("#name");
-    this.inputDescription = document.querySelector("#description");
+    this.selectPopup = document.querySelector('#popup');
+    this.inputName = document.querySelector('#name');
+    this.inputDescription = document.querySelector('#description');
 
-    this.btnSave = document.getElementById("save");
-    this.btnCancel = document.getElementById("cancel");
-    this.elError = document.querySelector("#form-error");
+    this.btnSave = document.getElementById('save');
+    this.btnCancel = document.getElementById('cancel');
+    this.elError = document.querySelector('#form-error');
   }
 
   eventsPopup() {
     // save
-    this.btnSave.addEventListener("click", () => {
-      if (this.inputName.value === "") {
+    this.btnSave.addEventListener('click', () => {
+      if (this.inputName.value === '') {
         this.inputName.focus();
-        this.showError(this.inputName, "Введите текст!");
+        this.showError(this.inputName, 'Введите текст!');
         return;
       }
 
-      this.selectPopup.classList.add("hidden");
+      this.selectPopup.classList.add('hidden');
       this.sProduct();
       this.clearInput();
     });
 
     // cancel
-    this.btnCancel.addEventListener("click", () => {
-      this.selectPopup.classList.add("hidden");
+    this.btnCancel.addEventListener('click', () => {
+      this.selectPopup.classList.add('hidden');
       this.hiddenError();
       this.clearInput();
     });
 
     // input name
-    this.inputName.addEventListener("input", () => {
+    this.inputName.addEventListener('input', () => {
       this.hiddenError();
     });
   }
 
   hiddenError() {
-    if (!this.elError.classList.contains("hidden")) {
-      this.elError.classList.add("hidden");
+    if (!this.elError.classList.contains('hidden')) {
+      this.elError.classList.add('hidden');
     }
   }
 
   clearInput() {
-    this.inputName.value = "";
-    this.inputDescription.value = "";
+    this.inputName.value = '';
+    this.inputDescription.value = '';
   }
 
   showError(element, message) {
     this.elError.textContent = message;
-    this.elError.classList.remove("hidden");
+    this.elError.classList.remove('hidden');
     this.elError.style.top = `${element.offsetTop + element.offsetHeight}px`;
     this.elError.style.left = `${element.offsetLeft + ((element.offsetWidth - this.elError.offsetWidth) / 2)}px`;
   }

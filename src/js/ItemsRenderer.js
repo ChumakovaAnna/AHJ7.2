@@ -1,11 +1,11 @@
 /* eslint-disable class-methods-use-this */
 export default class ItemsRenderer {
   constructor() {
-    this.container = document.querySelector("#tickets-list");
+    this.container = document.querySelector('#tickets-list');
   }
 
   render(arrTicket) {
-    this.container.innerHTML = "";
+    this.container.innerHTML = '';
     arrTicket.forEach((item) => {
       const date = new Date(item.created);
       const day = this.convertDate(date.getDate());
@@ -14,8 +14,8 @@ export default class ItemsRenderer {
       const hours = this.convertDate(date.getHours());
       const minute = this.convertDate(date.getMinutes());
       const itemCreated = `${day}.${month}.${year} ${hours}:${minute}`;
-      const ticket = document.createElement("div");
-      ticket.className = "ticket";
+      const ticket = document.createElement('div');
+      ticket.className = 'ticket';
       ticket.dataset.id = item.id;
       ticket.innerHTML = `
         <div class="grid-noGutter">
@@ -40,7 +40,7 @@ export default class ItemsRenderer {
           </div>
         </div>
         `;
-      this.container.insertAdjacentElement("beforeend", ticket);
+      this.container.insertAdjacentElement('beforeend', ticket);
     });
   }
 
